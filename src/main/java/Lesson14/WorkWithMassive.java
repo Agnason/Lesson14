@@ -1,15 +1,9 @@
+package Lesson14;
+
 import java.util.Arrays;
 
 
 public class WorkWithMassive {
-
-
-    public static void main(String[] args) {
-        int[] preMassive = {1, 5, 3, 7, 4, 5, 6, 7, 5};
-        System.out.println(Arrays.toString(doRevertMassive(preMassive)));
-        System.out.println(checkArrayFor1And4(preMassive));
-
-    }
 
     // Написать метод, которому в качестве аргумента передается не пустой одномерный целочисленный массив. Метод должен вернуть новый массив, который получен путем вытаскивания из исходного массива элементов, идущих после последней четверки. Входной массив должен содержать хотя бы одну четверку, иначе в методе необходимо выбросить RuntimeException.
 //Написать набор тестов для этого метода (по 3-4 варианта входных данных).
@@ -37,7 +31,7 @@ public class WorkWithMassive {
     }*/
 
     // II способ
-    public static int[] doRevertMassive(int[] preMassive) throws RuntimeException {
+    public int[] doRevertMassive(int[] preMassive) throws RuntimeException {
         if (preMassive.length == 0) {
             throw new NullPointerException();
         }
@@ -53,7 +47,7 @@ public class WorkWithMassive {
 //[ 4 4 4 4 ] -> false
 //[ 1 4 4 1 1 4 3 ] -> false
 
-    public static boolean checkArrayFor1And4(int[] arr) {
+    public boolean checkArrayFor1And4(int[] arr) {
         int count1 = 0, count4 = 0;
         for (int element : arr) {
             if (element == 1) count1++;
@@ -61,7 +55,5 @@ public class WorkWithMassive {
         }
         return (count1 > 0 && count4 > 0);
     }
-
-
 }
 
